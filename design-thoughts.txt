@@ -16,7 +16,13 @@ CLI:
 - written in c#
 - need some sort of orchestrator to manage reading the commands
 - need some sort of handler for each major sub command (get, create, etc)
-
+- commands that would be required:
+  - Install/run/apply template
+- commands that would be useful
+  - Initialize new project
+  - Validate
+  - Get current state
+  - Dry run
 
 Links to GCP API Docs for:
 - Computer engine/VM (https://cloud.google.com/compute/docs/reference/rest/v1)
