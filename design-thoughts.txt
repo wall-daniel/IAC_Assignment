@@ -1,0 +1,22 @@
+Models:
+- Abstract Resource (name, )
+  - VM (cpu, memory, os, network)
+  - Network Configuration (traffic rules, connections, subnets)
+  - DB (size, startup)
+- Can use yaml to specify these
+  - Would probably want some sort of schema for validation. Will not focus on this at the moment.
+
+Provider Service:
+- IProvider with methods to create, get, update resources
+  - AWS
+  - GCP (probably just implement this one)
+  - Azure
+
+CLI:
+- written in c#
+- need some sort of orchestrator to manage reading the commands
+- need some sort of handler for each major sub command (get, create, etc)
+
+
+Links to GCP API Docs for:
+- Computer engine/VM (https://cloud.google.com/compute/docs/reference/rest/v1)
