@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommandLine;
+using IAC_CLI.Parser;
+using System;
 
 namespace IAC_CLI
 {
@@ -6,7 +8,10 @@ namespace IAC_CLI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CommandLine.Parser.Default.ParseArguments<ApplyOptions>(args)
+                .MapResult(
+                    (ApplyOptions opts) => new ApplyOrchestrator(opts).Run(),
+                    errs => 1);
         }
     }
 }

@@ -1,0 +1,7 @@
+{
+  "resource": "db",
+  "description": {
+    "ID": "123",
+    "name": "the db"
+  }
+}

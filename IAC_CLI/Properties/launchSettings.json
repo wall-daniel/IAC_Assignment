@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IAC_CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "apply -i \"C:\\Users\\Danny Wall\\development\\IAC_Assignment\\test_files\\single_of_each\""
+    }
+  }
+}

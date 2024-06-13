@@ -1,0 +1,7 @@
+{
+  "resource": "network",
+  "description": {
+    "ID": "123",
+    "name": "the network"
+  }
+}
