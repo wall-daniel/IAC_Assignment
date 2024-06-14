@@ -11,6 +11,7 @@ Provider Service:
   - AWS
   - GCP (probably just implement this one)
   - Azure
+- start with mock and afterwords implement correct provider
 
 CLI:
 - written in c#

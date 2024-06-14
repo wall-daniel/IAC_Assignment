@@ -9,5 +9,10 @@ namespace IAC_CLI.Models
      */
     public class DBResource : AbstractResource
     {
+
+        public DBResource()
+        {
+            Type = ResourceType.DB;
+        }
     }
 }

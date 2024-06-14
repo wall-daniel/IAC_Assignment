@@ -9,5 +9,10 @@ namespace IAC_CLI.Models
      */
     public class VMResource : AbstractResource
     {
+
+        public VMResource() 
+        {
+            Type = ResourceType.VM;
+        }
     }
 }

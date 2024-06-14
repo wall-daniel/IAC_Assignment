@@ -9,5 +9,12 @@ namespace IAC_CLI.Models
      */
     public class NetworkResource : AbstractResource
     {
+
+        public string Name { get; set; }
+
+        public NetworkResource() 
+        {
+            Type = ResourceType.Network;
+        }
     }
 }

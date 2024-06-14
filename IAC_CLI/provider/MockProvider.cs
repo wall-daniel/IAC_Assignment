@@ -1,20 +1,42 @@
 
 
+using IAC_CLI.Models;
+using System;
+using System.Collections.Generic;
+
+namespace IAC_CLI.Provider;
+
 public class MockProvider : IProvider
 {
+
+    /** Get mock current state which is hard coded */
+    public State GetCurrentState()
+    {
+        // Currently create empty state.
+        return new State()
+        {
+            Networks = new List<NetworkResource>(),
+            VMs = new List<VMResource>(),
+            DBs = new List<DBResource>()
+        };
+    }
+
     public bool CreateDB()
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine("Creating DB...");
+        return true;
     }
 
     public bool CreateNetwork()
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine("Creating Network...");
+        return true;
     }
 
     public bool CreateVM()
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine("Creating VM...");
+        return true;
     }
 
     public object GetDBState()
