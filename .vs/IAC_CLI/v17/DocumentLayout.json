@@ -7,16 +7,36 @@
       "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\applyorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\iac_cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\iac_cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\models\\providerresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\models\\providerresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\handlers\\vmhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\handlers\\vmhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\handlers\\networkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\handlers\\networkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\handlers\\dbhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\handlers\\dbhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\parser\\applyoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\parser\\applyoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\iac_cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|solutionrelative:iac_cli\\iac_cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{839A3C54-2BC5-47D0-B929-4C8A7A320DE4}|IAC_CLI\\IAC_CLI.csproj|c:\\users\\danny wall\\development\\iac_assignment\\iac_cli\\models\\dbresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,11 +73,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VMHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Handlers\\VMHandler.cs",
+              "RelativeDocumentMoniker": "IAC_CLI\\Handlers\\VMHandler.cs",
+              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Handlers\\VMHandler.cs",
+              "RelativeToolTip": "IAC_CLI\\Handlers\\VMHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T20:45:22.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NetworkHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Handlers\\NetworkHandler.cs",
+              "RelativeDocumentMoniker": "IAC_CLI\\Handlers\\NetworkHandler.cs",
+              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Handlers\\NetworkHandler.cs",
+              "RelativeToolTip": "IAC_CLI\\Handlers\\NetworkHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T20:45:21.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Handlers\\DBHandler.cs",
+              "RelativeDocumentMoniker": "IAC_CLI\\Handlers\\DBHandler.cs",
+              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Handlers\\DBHandler.cs",
+              "RelativeToolTip": "IAC_CLI\\Handlers\\DBHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T20:45:20.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\State.cs",
+              "RelativeDocumentMoniker": "IAC_CLI\\Models\\State.cs",
+              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\State.cs",
+              "RelativeToolTip": "IAC_CLI\\Models\\State.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T20:38:10.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProviderResource.cs",
+              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\ProviderResource.cs",
+              "RelativeDocumentMoniker": "IAC_CLI\\Models\\ProviderResource.cs",
+              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\ProviderResource.cs",
+              "RelativeToolTip": "IAC_CLI\\Models\\ProviderResource.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T20:31:03.745Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -67,14 +152,14 @@
               "RelativeDocumentMoniker": "IAC_CLI\\ApplyOrchestrator.cs",
               "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\ApplyOrchestrator.cs",
               "RelativeToolTip": "IAC_CLI\\ApplyOrchestrator.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAiwCoAAAAYAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAAADwAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-12T23:56:06.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "DBResource.cs",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\DBResource.cs",
               "RelativeDocumentMoniker": "IAC_CLI\\Models\\DBResource.cs",
@@ -87,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "NetworkResource.cs",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\NetworkResource.cs",
               "RelativeDocumentMoniker": "IAC_CLI\\Models\\NetworkResource.cs",
@@ -100,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "VMResource.cs",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\VMResource.cs",
               "RelativeDocumentMoniker": "IAC_CLI\\Models\\VMResource.cs",
@@ -113,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "AbstractResource.cs",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Models\\AbstractResource.cs",
               "RelativeDocumentMoniker": "IAC_CLI\\Models\\AbstractResource.cs",
@@ -126,7 +211,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Program.cs",
+              "RelativeDocumentMoniker": "IAC_CLI\\Program.cs",
+              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Program.cs",
+              "RelativeToolTip": "IAC_CLI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T23:46:48.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ApplyOptions.cs",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Parser\\ApplyOptions.cs",
               "RelativeDocumentMoniker": "IAC_CLI\\Parser\\ApplyOptions.cs",
@@ -139,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Microsoft.NET.EolTargetFrameworks.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.EolTargetFrameworks.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.EolTargetFrameworks.targets",
@@ -152,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "MockProvider.cs",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Provider\\MockProvider.cs",
               "RelativeDocumentMoniker": "IAC_CLI\\Provider\\MockProvider.cs",
@@ -165,20 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Program.cs",
-              "RelativeDocumentMoniker": "IAC_CLI\\Program.cs",
-              "ToolTip": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\Program.cs",
-              "RelativeToolTip": "IAC_CLI\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAjwAkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T23:46:48.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "IAC_CLI",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\IAC_CLI.csproj",
               "RelativeDocumentMoniker": "IAC_CLI\\IAC_CLI.csproj",
@@ -191,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Danny Wall\\development\\IAC_Assignment\\IAC_CLI\\appsettings.json",
               "RelativeDocumentMoniker": "IAC_CLI\\appsettings.json",

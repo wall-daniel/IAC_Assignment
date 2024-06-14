@@ -1,0 +1,6 @@
+{
+    "resource": "provider",
+    "description": {
+      "Provider": "mock"
+    }
+  }
