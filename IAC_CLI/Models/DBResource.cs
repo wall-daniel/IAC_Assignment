@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IAC_CLI.Models.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,6 +14,12 @@ namespace IAC_CLI.Models
         public DBResource()
         {
             Type = ResourceType.DB;
+        }
+
+        /** Inherit docs */
+        public override UpdateCommand CreateUpdateCommand(AbstractResource currentState)
+        {
+            return new UpdateCommand(this, currentState, new Dictionary<string, string>());
         }
     }
 }

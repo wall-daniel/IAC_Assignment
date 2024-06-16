@@ -7,6 +7,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using IAC_CLI.Models.Command;
+using System.Net;
 
 namespace IAC_CLI
 {
@@ -101,18 +102,38 @@ namespace IAC_CLI
          */
         private void ReconcileCurrentState()
         {
-            // First iteration just check if things exist
-            foreach (var network in  _desiredState.Networks)
-                if (!_currentState.Networks.Where(n => n.ID == network.ID).Any())
-                    _commands.Add(new CreateCommand(network));
+            var commandFactory = new CommandFactory();
+
+            // Second iteration find the resource in the current state
+            foreach (var network in _desiredState.Networks)
+            {
+                var currentStateNetwork = _currentState.Networks.Find(n => n.ID == network.ID);
+                var command = commandFactory.CreateCommand(network, currentStateNetwork);
+                if (command != null)
+                    _commands.Add(command);
+                
+                // Otherwise do nothing and continue on
+            }
 
             foreach (var vm in _desiredState.VMs)
-                if (!_currentState.VMs.Where(v => v.ID == vm.ID).Any())
-                    _commands.Add(new CreateCommand(vm));
+            {
+                var currentVM = _currentState.VMs.Find(v => v.ID == vm.ID);
+                var command = commandFactory.CreateCommand(vm, currentVM);
+                if (command != null)
+                    _commands.Add(command);
+
+                // Otherwise do nothing and continue on
+            }
 
             foreach (var db in _desiredState.DBs)
-                if (!_currentState.DBs.Where(d => d.ID == db.ID).Any())
-                    _commands.Add(new CreateCommand(db));
+            {
+                var currentDB = _currentState.DBs.Find(d => d.ID == db.ID);
+                var command = commandFactory.CreateCommand(db, currentDB);
+                if (command != null)
+                    _commands.Add(command);
+
+                // Otherwise do nothing and continue on
+            }
         }
 
         private void ApplyState()

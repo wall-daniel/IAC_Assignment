@@ -16,7 +16,7 @@ public class MockProvider : IProvider
         return new State()
         {
             Networks = new List<NetworkResource>(),
-            VMs = new List<VMResource>(),
+            VMs = new List<VMResource>() { new VMResource() { ID = "123" } },
             DBs = new List<DBResource>()
         };
     }
@@ -56,16 +56,19 @@ public class MockProvider : IProvider
 
     public bool UpdateDB()
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine("Updating DB...");
+        return true;
     }
 
     public bool UpdateNetwork()
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine("Updating Network...");
+        return true;
     }
 
     public bool UpdateVM()
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine("Updating VM...");
+        return true;
     }
 }

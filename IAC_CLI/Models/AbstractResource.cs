@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IAC_CLI.Models.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,11 @@ namespace IAC_CLI.Models
 
         /** The type of resource */
         public ResourceType Type { get; set; }
+
+        /**
+         * Creates an update command to go from the current to the desired state.
+         */
+        public abstract UpdateCommand CreateUpdateCommand(AbstractResource currentState);
     }
 
     public enum ResourceType
