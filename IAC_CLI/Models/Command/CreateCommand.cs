@@ -27,7 +27,7 @@ namespace IAC_CLI.Models.Command
                     provider.CreateNetwork();
                     break;
                 case ResourceType.VM:
-                    provider.CreateVM();
+                    provider.CreateVM(Resource as VMResource);
                     break;
                 case ResourceType.DB:
                     provider.CreateDB();

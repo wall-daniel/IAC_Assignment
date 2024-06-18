@@ -1,6 +1,8 @@
 {
     "resource": "provider",
     "description": {
-      "Provider": "mock"
+      "Provider": "gcp",
+      "Project": "jovial-root-426800-a7",
+      "Zone": "us-west1-a"
     }
   }

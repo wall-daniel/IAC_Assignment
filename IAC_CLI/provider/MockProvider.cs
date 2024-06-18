@@ -33,25 +33,10 @@ public class MockProvider : IProvider
         return true;
     }
 
-    public bool CreateVM()
+    public bool CreateVM(VMResource vm)
     {
         Console.WriteLine("Creating VM...");
         return true;
-    }
-
-    public object GetDBState()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public object GetNetworkState()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public object GetVMState()
-    {
-        throw new System.NotImplementedException();
     }
 
     public bool UpdateDB()

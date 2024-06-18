@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using IAC_CLI.Parser;
+using IAC_CLI.Provider;
 using System;
 
 namespace IAC_CLI

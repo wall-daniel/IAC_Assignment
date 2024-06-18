@@ -38,7 +38,7 @@ namespace IAC_CLI
             LoadFiles();
 
             // Get current provider
-            _provider = new ProviderFactory(_desiredState.Provider.Provider).CreateProvider();
+            _provider = new ProviderFactory().CreateProvider(_desiredState.Provider);
 
             // Get the current state from the provider
             GetCurrentState();
@@ -107,7 +107,7 @@ namespace IAC_CLI
             // Second iteration find the resource in the current state
             foreach (var network in _desiredState.Networks)
             {
-                var currentStateNetwork = _currentState.Networks.Find(n => n.ID == network.ID);
+                var currentStateNetwork = _currentState.Networks.FirstOrDefault(n => n.ID == network.ID);
                 var command = commandFactory.CreateCommand(network, currentStateNetwork);
                 if (command != null)
                     _commands.Add(command);
@@ -117,7 +117,7 @@ namespace IAC_CLI
 
             foreach (var vm in _desiredState.VMs)
             {
-                var currentVM = _currentState.VMs.Find(v => v.ID == vm.ID);
+                var currentVM = _currentState.VMs.FirstOrDefault(v => v.ID == vm.ID);
                 var command = commandFactory.CreateCommand(vm, currentVM);
                 if (command != null)
                     _commands.Add(command);
@@ -127,13 +127,15 @@ namespace IAC_CLI
 
             foreach (var db in _desiredState.DBs)
             {
-                var currentDB = _currentState.DBs.Find(d => d.ID == db.ID);
+                var currentDB = _currentState.DBs.FirstOrDefault(d => d.ID == db.ID);
                 var command = commandFactory.CreateCommand(db, currentDB);
                 if (command != null)
                     _commands.Add(command);
 
                 // Otherwise do nothing and continue on
             }
+
+            // TODO: handle delete operations
         }
 
         private void ApplyState()

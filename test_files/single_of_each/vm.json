@@ -2,6 +2,7 @@
   "resource": "vm",
   "description": {
     "ID": "123",
-    "name": "the vm"
+    "name": "the-vm",
+    "machinetype": "zones/us-west1-a/machineTypes/e2-standard-2"
   }
 }
