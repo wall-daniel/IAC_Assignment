@@ -1,5 +1,6 @@
 
 
+using Google.Cloud.Compute.V1;
 using IAC_CLI.Models;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ public class MockProvider : IProvider
         return new State()
         {
             Networks = new List<NetworkResource>(),
-            VMs = new List<VMResource>() { new VMResource() { ID = "123" } },
+            VMs = new List<Instance>() { new Instance() { Name = "123" } },
             DBs = new List<DBResource>()
         };
     }
@@ -51,7 +52,7 @@ public class MockProvider : IProvider
         return true;
     }
 
-    public bool UpdateVM()
+    public bool UpdateVM(VMResource desiredState, Instance currentState)
     {
         Console.WriteLine("Updating VM...");
         return true;

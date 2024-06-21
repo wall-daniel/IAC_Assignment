@@ -3,11 +3,8 @@ using IAC_CLI.Provider;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.IO;
-using IAC_CLI.Models.Command;
-using System.Net;
 
 namespace IAC_CLI
 {
@@ -15,13 +12,16 @@ namespace IAC_CLI
     {
         private string _inputFolder;
 
-        private State _desiredState = new State();
+        private List<VMResource> _desiredVMs = new List<VMResource>();
+        private List<NetworkResource> _desiredNetworks = new List<NetworkResource>();
+        private List<DBResource> _desiredDBs = new List<DBResource>();
+        private ProviderResource _providerResource;
 
         private State _currentState = new State();
 
         private IProvider _provider;
 
-        private IList<ICommand> _commands = new List<ICommand>();
+        //private IList<ICommand> _commands = new List<ICommand>();
 
         public ApplyOrchestrator(Parser.ApplyOptions opts)
         {
@@ -38,13 +38,13 @@ namespace IAC_CLI
             LoadFiles();
 
             // Get current provider
-            _provider = new ProviderFactory().CreateProvider(_desiredState.Provider);
+            _provider = new ProviderFactory().CreateProvider(_providerResource);
 
             // Get the current state from the provider
             GetCurrentState();
 
             // Reconcile the current state with the configuration
-            ReconcileCurrentState();
+            //ReconcileCurrentState(); ### Changing this since separate reconcile is difficult to create update command...
 
             // Update current state to match provided state
             ApplyState();
@@ -68,16 +68,16 @@ namespace IAC_CLI
                 switch (resourceTypeStr)
                 {
                     case "provider":
-                        _desiredState.Provider = resource["description"].ToObject<ProviderResource>();
+                        _providerResource = resource["description"].ToObject<ProviderResource>();
                         break;
                     case "vm":
-                        _desiredState.VMs.Add(resource["description"].ToObject<VMResource>());
+                        _desiredVMs.Add(resource["description"].ToObject<VMResource>());
                         break;
                     case "network":
-                        _desiredState.Networks.Add(resource["description"].ToObject<NetworkResource>());
+                        _desiredNetworks.Add(resource["description"].ToObject<NetworkResource>());
                         break;
                     case "db":
-                        _desiredState.DBs.Add(resource["description"].ToObject<DBResource>());
+                        _desiredDBs.Add(resource["description"].ToObject<DBResource>());
                         break;
                     default:
                         Console.WriteLine("Unknown resource: {0} in file: {1}", resourceTypeStr, file);
@@ -86,7 +86,7 @@ namespace IAC_CLI
             }
 
             // Ensure a provider was given, otherwise we cannot continue
-            if (_desiredState.Provider == null)
+            if (_providerResource == null)
             {
                 throw new FileNotFoundException("No file found for a provider resource. Cannot continue.");
             }
@@ -100,49 +100,57 @@ namespace IAC_CLI
         /**
          * Determine what changes need to happen to get to the desired state
          */
-        private void ReconcileCurrentState()
-        {
-            var commandFactory = new CommandFactory();
+        //private void ReconcileCurrentState()
+        //{
+        //    var commandFactory = new CommandFactory();
 
-            // Second iteration find the resource in the current state
-            foreach (var network in _desiredState.Networks)
-            {
-                var currentStateNetwork = _currentState.Networks.FirstOrDefault(n => n.ID == network.ID);
-                var command = commandFactory.CreateCommand(network, currentStateNetwork);
-                if (command != null)
-                    _commands.Add(command);
+        //    // Second iteration find the resource in the current state
+        //    foreach (var network in _desiredNetworks)
+        //    {
+        //        var currentStateNetwork = _currentState.Networks.FirstOrDefault(n => n.ID == network.ID);
+        //        var command = commandFactory.CreateCommand(network, currentStateNetwork);
+        //        if (command != null)
+        //            _commands.Add(command);
                 
-                // Otherwise do nothing and continue on
-            }
+        //        // Otherwise do nothing and continue on
+        //    }
 
-            foreach (var vm in _desiredState.VMs)
-            {
-                var currentVM = _currentState.VMs.FirstOrDefault(v => v.ID == vm.ID);
-                var command = commandFactory.CreateCommand(vm, currentVM);
-                if (command != null)
-                    _commands.Add(command);
+        //    foreach (var vm in _desiredVMs)
+        //    {
+        //        var currentVM = _currentState.VMs.FirstOrDefault(v => v.Id.ToString() == vm.ID);
+        //        var command = commandFactory.CreateCommand(vm, currentVM);
+        //        if (command != null)
+        //            _commands.Add(command);
 
-                // Otherwise do nothing and continue on
-            }
+        //        // Otherwise do nothing and continue on
+        //    }
 
-            foreach (var db in _desiredState.DBs)
-            {
-                var currentDB = _currentState.DBs.FirstOrDefault(d => d.ID == db.ID);
-                var command = commandFactory.CreateCommand(db, currentDB);
-                if (command != null)
-                    _commands.Add(command);
+        //    foreach (var db in _desiredDBs)
+        //    {
+        //        var currentDB = _currentState.DBs.FirstOrDefault(d => d.ID == db.ID);
+        //        var command = commandFactory.CreateCommand(db, currentDB);
+        //        if (command != null)
+        //            _commands.Add(command);
 
-                // Otherwise do nothing and continue on
-            }
+        //        // Otherwise do nothing and continue on
+        //    }
 
-            // TODO: handle delete operations
-        }
+        //    // TODO: handle delete operations
+        //}
 
         private void ApplyState()
         {
-            foreach (var command in _commands)
+            foreach (var desiredState in _desiredVMs)
             {
-                command.Apply(_provider);
+                var currentState = _currentState.VMs.Find(vm => vm.Name == desiredState.Name);
+                if (currentState != null)
+                {
+                    _provider.UpdateVM(desiredState, currentState);
+                }
+                else
+                {
+                    _provider.CreateVM(desiredState);
+                }
             }
         }
     }

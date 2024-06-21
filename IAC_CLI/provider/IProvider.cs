@@ -1,5 +1,6 @@
 
 
+using Google.Cloud.Compute.V1;
 using IAC_CLI.Models;
 using System;
 
@@ -14,7 +15,7 @@ public interface IProvider
     State GetCurrentState();
     
     bool CreateVM(VMResource vm);
-    bool UpdateVM();
+    bool UpdateVM(VMResource desiredState, Instance currentState);
 
     bool CreateNetwork();
     bool UpdateNetwork();

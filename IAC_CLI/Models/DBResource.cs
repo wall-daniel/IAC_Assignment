@@ -1,25 +1,16 @@
-﻿using IAC_CLI.Models.Command;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Google.Apis.SQLAdmin.v1.Data;
 
 namespace IAC_CLI.Models
 {
     /**
      * Resource representing a database
      */
-    public class DBResource : AbstractResource
+    public class DBResource : AbstractResource<Database>
     {
 
         public DBResource()
         {
             Type = ResourceType.DB;
-        }
-
-        /** Inherit docs */
-        public override UpdateCommand CreateUpdateCommand(AbstractResource currentState)
-        {
-            return new UpdateCommand(this, currentState, new Dictionary<string, string>());
         }
     }
 }

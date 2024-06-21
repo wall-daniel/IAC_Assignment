@@ -14,38 +14,35 @@ namespace IAC_CLI.Provider
     public class GCProvider : IProvider
     {
         private InstancesClient _instancesClient;
+        private NetworksClient _networksClient;
 
         private ProviderResource _providerResource;
 
-        public GCProvider(ProviderResource configuration) 
+        public GCProvider(ProviderResource configuration)
         {
             this._providerResource = configuration;
 
-            _instancesClient = new InstancesClientBuilder()
-            {
-                JsonCredentials = File.ReadAllText("C:\\Users\\Danny Wall\\Downloads\\credentials.json")
-            }.Build();
+            var jsonCredentialFile = File.ReadAllText("C:\\Users\\Danny Wall\\Downloads\\credentials.json");
+
+            _instancesClient = new InstancesClientBuilder() { JsonCredentials = jsonCredentialFile }.Build();
+            _networksClient = new NetworksClientBuilder() { JsonCredentials = jsonCredentialFile }.Build();
         }
 
         public State GetCurrentState()
         {
             // Get all the VM states
-            var list = _instancesClient.List(new ListInstancesRequest()
+            var vms = _instancesClient.List(new ListInstancesRequest()
             {
                 Project = _providerResource.Project,
                 Zone = _providerResource.Zone,
             });
-            var vms = new List<VMResource>();
-            foreach (var vm in list)
-            {
-                vms.Add(new VMResource() { ID = vm.Id.ToString(), Name = vm.Name });
-            }
+
 
             // TODO: other stuff
 
             return new State()
             {
-                VMs = vms
+                VMs = vms.ToList(),
             };
         }
 
@@ -69,18 +66,18 @@ namespace IAC_CLI.Provider
                 MachineType = vm.MachineType,
             };
 
-            instance.Disks.Add(new AttachedDisk() 
-            { 
-                Boot = true, 
+            instance.Disks.Add(new AttachedDisk()
+            {
+                Boot = true,
                 InitializeParams = new AttachedDiskInitializeParams()
                 {
-                    SourceImage = "projects/centos-cloud/global/images/family/centos-stream-9"
+                    SourceImage = vm.OS,
                 }
             });
 
             instance.NetworkInterfaces.Add(new NetworkInterface()
             {
-                
+
             });
 
             var operation = _instancesClient.Insert(new InsertInstanceRequest()
@@ -104,9 +101,52 @@ namespace IAC_CLI.Provider
             throw new NotImplementedException();
         }
 
-        public bool UpdateVM()
+        public bool UpdateVM(VMResource desiredState, Instance instance)
         {
-            throw new NotImplementedException();
+            bool needsUpdate = false;
+
+            // Check ending as GC adds URL at start
+            if (!instance.MachineType.EndsWith(desiredState.MachineType, StringComparison.InvariantCultureIgnoreCase))
+            {
+                instance.MachineType = desiredState.MachineType;
+                needsUpdate = true;
+            }
+
+            //var bootDIsk = instance.Disks.FirstOrDefault(d => d.Boot);
+            //Console.WriteLine(bootDIsk.Source.Contains("project"));
+            //if (bootDIsk.Source != desiredState.OS)
+            //{
+            //    bootDIsk.Source = desiredState.OS;
+            //    needsUpdate = true;
+            //}
+
+
+            if (!needsUpdate)
+            {
+                return true;
+            }
+
+            var operation = _instancesClient.Update(new UpdateInstanceRequest()
+            {
+                Zone = _providerResource.Zone,
+                Project = _providerResource.Project,
+                InstanceResource = instance,
+                Instance = instance.Name,
+                MinimalAction = "RESTART",
+                MostDisruptiveAllowedAction = "RESTART"
+            });
+
+            try
+            {
+                operation.PollUntilCompleted();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // TODO: logging...
+            }
+
+            return false;
         }
     }
 }

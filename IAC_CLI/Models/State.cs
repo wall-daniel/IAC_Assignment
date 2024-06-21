@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Google.Cloud.Compute.V1;
+using System.Collections.Generic;
 
 namespace IAC_CLI.Models
 {
@@ -10,7 +11,7 @@ namespace IAC_CLI.Models
 
         public ProviderResource Provider { get; set; }
 
-        public List<VMResource> VMs = new List<VMResource>();
+        public List<Instance> VMs = new List<Instance>();
 
         public List<NetworkResource> Networks = new List<NetworkResource>();
 

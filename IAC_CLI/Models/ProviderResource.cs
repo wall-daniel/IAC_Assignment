@@ -1,11 +1,4 @@
-﻿using IAC_CLI.Models.Command;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IAC_CLI.Models
+﻿namespace IAC_CLI.Models
 {
     public class ProviderResource
     {
